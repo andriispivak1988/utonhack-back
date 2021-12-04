@@ -6,11 +6,12 @@ import { StationService } from 'src/station/station.service';
 import { EACs } from './dto/eacs.entity';
 import { EACsController } from './eacs.controller';
 import { AskRepository, EACsRepository } from './eacs.repository';
+import { UserRepository } from 'src/auth/user.repository';
 import { EACsService } from './eacs.service';
-
+​
 @Module({
   imports: [
-    TypeOrmModule.forFeature([EACsRepository,AskRepository,]),
+    TypeOrmModule.forFeature([EACsRepository,AskRepository,UserRepository,]),
     AuthModule,
     StationModule
   ],
@@ -18,4 +19,3 @@ import { EACsService } from './eacs.service';
   providers: [EACsService]
 })
 export class EACsModule { }
-
