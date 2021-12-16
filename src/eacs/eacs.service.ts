@@ -153,7 +153,10 @@ export class EACsService {
 ​
         const userPrivKey = user.privateKey;
         const recipient = new Likelib.Account(userPrivKey);
-​
+        
+​		eacs.fromAddress = account.getAddress();
+ 		eacs.toAddress = recipient.getAddress();
+
         const abi = NFTArtifact.abi;
         const compiled = NFTArtifact.bytecode.slice(2);
 ​
